@@ -1,0 +1,127 @@
+{
+  "planHash": "56651623a4c74bc0666aad3d716dacb23bbde2c0fc56b8b28920d701af499ede",
+  "phase": "standalone",
+  "recordedAtUtc": "2026-10-16T13:22:59.9652328Z",
+  "retryCount": 2,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 0,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E vellmont_frontend@0.0.0 build\r\n\u003E tsc -b \u0026\u0026 vite build\r\n\r\n\u001B[36mvite v8.3.4 \u001B[32mbuilding client environment for production...\u001B[36m\u001B[39m\r\ntransforming...\r\n\u2713 23 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\ndist/index.html                   0.59 kB \u2502 gzip:  0.37 kB\r\ndist/assets/index-DOIARMYk.css   32.78 kB \u2502 gzip:  7.08 kB\r\ndist/assets/index-Cb7Vq8Nt.js   267.46 kB \u2502 gzip: 80.75 kB\r\n\r\n\u001B[32m\u2713 built in 9.59s\u001B[39m\r\n\u001B[33m\u001B[33m[PLUGIN_TIMINGS] \u001B[0mJavaScript callbacks ran for 7.8s of this 9.4s build (83%).\r\nThe slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):\r\n  - plugin @tailwindcss/vite:generate:build transform (50%, 4.7s, 1 call)\r\n  - plugin vite:css transform (14%, 1.4s, 1 call)\r\nAdditional callback time came from callbacks under 1s.\r\nSee https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.\r\n\u001B[39m\r\n",
+        "durationMs": 68044
+      },
+      {
+        "name": "eslint-clean",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E vellmont_frontend@0.0.0 lint\r\n\u003E eslint .\r\n\r\n",
+        "durationMs": 93294
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": false,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 1,
+        "outputSample": "\r\n\u003E vellmont_frontend@0.0.0 test\r\n\u003E vitest run\r\n\r\n\r\n RUN  v5.0.5 C:/Users/elvis/Desktop/rust/vellmont_frontend\r\n\r\n \u276F src/api.test.ts (0 test)\r\n \u276F src/domain.test.ts (0 test)\r\n\r\n\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF Failed Suites 2 \u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\r\n\r\n FAIL  src/api.test.ts [ src/api.test.ts ]\r\nTypeError: Cannot read properties of undefined (reading \u0027config\u0027)\r\n \u276F src/api.test.ts:5:1\r\n      3| import { ApiError, apiRequest, isBackendUnavailable } from \u0027./api\u0027\r\n      4|\r\n      5| describe(\u0027apiRequest\u0027, () =\u003E {\r\n       | ^\r\n      6|   afterEach(() =\u003E {\r\n      7|     vi.unstubAllGlobals()\r\n\r\n\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF[1/2]\u23AF\r\n\r\n FAIL  src/domain.test.ts [ src/domain.test.ts ]\r\nTypeError: Cannot read properties of undefined (reading \u0027config\u0027)\r\n \u276F src/domain.test.ts:9:1\r\n      7| } from \u0027./domain\u0027\r\n      8|\r\n      9| describe(\u0027property and unit form choices\u0027, () =\u003E {\r\n       | ^\r\n     10|   const properties = propertyOptionsFromRows(asRows([\r\n     11|     { id: \u0027property-1\u0027, name: \u0027Maple Court\u0027 },\r\n\r\n\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF[2/2]\u23AF\r\n\r\n\r\n Test Files  2 failed (2)\r\n      Tests  no tests\r\n   Start at  16:22:48\r\n   Duration  2.06s (worker 97%, environment 3%)\r\n\r\n",
+        "durationMs": 9180,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 0,
+          "testsPassed": 0,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": true
+        }
+      },
+      {
+        "name": "dev-server-serves-home",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022\u003Eimport { injectIntoGlobalHook } from \u0022/@react-refresh\u0022;\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =\u003E {};\nwindow.$RefreshSig$ = () =\u003E (type) =\u003E type;\u003C/script\u003E\n\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\n    \u003Cmeta name=\u0022theme-color\u0022 content=\u0022#064e3b\u0022 /\u003E\n    \u003Cmeta name=\u0022description\u0022 content=\u0022Thoughtful homes, clear details, and a more personal way to make your next move.\u0022 /\u003E\n    \u003Ctitle\u003EVellmont \u2014 Find a place to belong\u003C/title\u003E\n  \u003C/head\u003E\n  \u003Cbody\u003E\n    \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/main.tsx\u0022\u003E\u003C/script\u003E\n  \u003C/body\u003E\n\u003C/html\u003E\n\n--- server output ---\n\r\n\u003E vellmont_frontend@0.0.0 dev\r\n\u003E vite --host 127.0.0.1 --strictPort --port 3000\r\n\r\n\r\n  \u001B[32m\u001B[1mVITE\u001B[22m v8.3.4\u001B[39m  \u001B[2mready in \u001B[0m\u001B[1m4850\u001B[22m\u001B[2m\u001B[0m ms\u001B[22m\r\n\r\n  \u001B[32m\u279C\u001B[39m  \u001B[1mLocal\u001B[22m:   \u001B[36mhttp://127.0.0.1:\u001B[1m3000\u001B[22m/\u001B[39m\r\n",
+        "durationMs": 8666
+      }
+    ],
+    "executions": [
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "c:\\Users\\elvis\\Desktop\\rust\\vellmont_frontend",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "eslint-clean",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "lint"
+        ],
+        "cwd": "c:\\Users\\elvis\\Desktop\\rust\\vellmont_frontend",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "test"
+        ],
+        "cwd": "c:\\Users\\elvis\\Desktop\\rust\\vellmont_frontend",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "dev-server-serves-home",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--host",
+          "127.0.0.1",
+          "--strictPort",
+          "--port",
+          "3000"
+        ],
+        "cwd": "c:\\Users\\elvis\\Desktop\\rust\\vellmont_frontend",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}

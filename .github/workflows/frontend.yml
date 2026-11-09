@@ -1,0 +1,38 @@
+name: React CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  react-check:
+    name: React Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # Get the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Check code quality
+      - name: Run ESLint
+        run: npm run lint
+
+      # Check whether the React application builds
+      - name: Build React application
+        run: npm run build
